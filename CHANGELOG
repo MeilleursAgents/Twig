@@ -7,6 +7,7 @@
  * added support for named arguments for filters, tests, and functions
  * moved filters/functions/tests syntax errors to the parser
  * added support for extended ternary operator syntaxes
+ * added the ability to unpack multiple arguments in a single set statement
 
 * 1.11.1 (2012-11-11)
 

@@ -76,6 +76,13 @@ list(\$context["foo"], \$context["bar"]) = array("foo", {$this->getVariableGette
 EOF
         );
 
+        $names = new Twig_Node(array(new Twig_Node_Expression_AssignName('foo', 0), new Twig_Node_Expression_AssignName('bar', 0)), array(), 0);
+        $values = new Twig_Node(array(new Twig_Node_Expression_Name('bar', 0)), array(), 0);
+        $node = new Twig_Node_Set(false, $names, $values, 0);
+        $tests[] = array($node, <<<EOF
+list(\$context["foo"], \$context["bar"]) = \$this->getContext(\$context, "bar");
+EOF
+        );
         return $tests;
     }
 }

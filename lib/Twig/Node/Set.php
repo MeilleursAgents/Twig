@@ -74,7 +74,7 @@ class Twig_Node_Set extends Twig_Node
         if (!$this->getAttribute('capture')) {
             $compiler->raw(' = ');
 
-            if (count($this->getNode('names')) > 1) {
+            if (count($this->getNode('values')) > 1) {
                 $compiler->write('array(');
                 foreach ($this->getNode('values') as $idx => $value) {
                     if ($idx) {

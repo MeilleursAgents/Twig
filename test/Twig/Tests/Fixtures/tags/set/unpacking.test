@@ -1,0 +1,14 @@
+--TEST--
+"set" tag with array unpacking
+--TEMPLATE--
+{% set foo, bar = ['foo', 'bar'] %}
+{{ foo }}{{ bar }}
+
+{% set foo, bar = values %}
+{{ foo }}{{ bar }}
+--DATA--
+return array('values' => array('foo', 'bar'))
+--EXPECT--
+foobar
+
+foobar
